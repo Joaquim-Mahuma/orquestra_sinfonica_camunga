@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Gelline';
+    src: url('../fonts/Eastman-Condensed-Regular-Offset-trial.otf');
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Catalish';
+    src: url('../fonts/Catalish\ Huntera.otf');
+}
+
+* {
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+:root {
+    --cor1: #0d0d0d;
+    --cor2: #595959;
+    --cor3: #a6a6a6;
+    --cor4: #332424;
+    --cor5: #c0902a;
+}
+
+body {
+    background-color: var(--cor1);
+    margin: auto;
+}
+
+header {
+    display: flex;
+    align-content: space-between;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 0px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+#logo {
+    font-size: 1.4rem;
+}
+
+#nav_list {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+#sub-hero {
+    margin: auto;
+    max-width: 1000px;
+}
+
+.nav-link {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.nav-link::after {
+    content: ' ';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--cor5);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+    transition-duration: 0.5s;
+    color: var(--cor5);
+}
+
+.nav-link:hover::after { 
+    width: 100%;
+}
+
+#hero {
+    position: relative;
+    background-image:  url('../img/orquestra.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    padding: 150px 0px 100px;
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.867);
+    z-index: 1;
+}
+
+.overlay-content {
+    position: relative;
+    z-index: 2;
+
+    padding: 10px 0px;
+}
+
+#hero-title {
+    font-size: 4rem;
+    font-weight: bold;
+    font-family: 'Gelline', Arial, Helvetica, sans-serif;
+
+    margin-bottom: 20px;
+}
+
+#hero-legend {
+    font-family: 'Catalish';
+    font-size: 2rem;
+    color: var(--cor5);
+    margin-bottom: 20px;
+}
+
+#hero-description {
+    width: 500px;
+}
