@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 @font-face {
-    font-family: 'Gelline';
-    src: url('../fonts/Eastman-Condensed-Regular-Offset-trial.otf');
+    font-family: 'TT';
+    src: url('../fonts/TT\ Backwards\ Sans\ Trial\ Regular.otf');
 }
 
 @font-face {
@@ -39,14 +39,14 @@ body {
     margin: auto;
 }
 
+/* HEADER */
 header {
     display: flex;
     align-content: space-between;
     justify-content: space-between;
     align-items: center;
-
-    padding: 10px 0px;
-    max-width: 1000px;
+    padding: 10px 0;
+    max-width: 1200px;
     margin: auto;
 }
 
@@ -58,11 +58,6 @@ header {
     display: flex;
     gap: 15px;
     list-style: none;
-}
-
-#sub-hero {
-    margin: auto;
-    max-width: 1000px;
 }
 
 .nav-link {
@@ -87,19 +82,25 @@ header {
     color: var(--cor5);
 }
 
-.nav-link:hover::after { 
+.nav-link:hover::after {
     width: 100%;
 }
 
+/* HERO */
 #hero {
     position: relative;
-    background-image:  url('../img/orquestra.jpg');
+    background-image: url('../img/orquestra.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-
-    padding: 150px 0px 100px;
     width: 100%;
+    padding: 150px 0 100px;
+    margin-bottom: 80px;
+}
+
+#sub-hero {
+    margin: auto;
+    max-width: 1200px;
 }
 
 .overlay {
@@ -109,31 +110,208 @@ header {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.867);
+    background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0.079) 20%);
     z-index: 1;
 }
 
 .overlay-content {
     position: relative;
     z-index: 2;
-
-    padding: 10px 0px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
 }
 
 #hero-title {
     font-size: 4rem;
     font-weight: bold;
-    font-family: 'Gelline', Arial, Helvetica, sans-serif;
-
-    margin-bottom: 20px;
+    font-family: 'TT', Arial, Helvetica, sans-serif;
+    letter-spacing: -2px;
+    margin-bottom: 10px;
 }
 
 #hero-legend {
     font-family: 'Catalish';
     font-size: 2rem;
     color: var(--cor5);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 #hero-description {
     width: 500px;
+    margin-bottom: 30px;
+}
+
+.hero-link-container {
+    display: flex;
+    align-items: center;
+}
+
+.hero-link {
+    background-color: var(--cor5);
+    color: white;
+    border-radius: 50px;
+    transition: background-color 0.3s ease-out, color 0.3s ease-in-out;
+    padding: 20px 25px;
+}
+
+.hero-link:hover {
+    background-color: white;
+    color: black;
+}
+
+.hero-img-container {
+    position: relative;
+}
+
+.hero-img1 {
+    max-width: 400px;
+    border-radius: 10px;
+    transform: rotate(10deg) translateY(50%);
+}
+
+.hero-img2 {
+    position: absolute;
+    max-width: 400px;
+    transform: rotate(-10deg) translate(-100%, -50%);
+    border-radius: 10px;
+}
+
+/* ATUALIZAÇÕES */
+#atualizacoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    margin: auto;
+}
+
+#atualizacoes_title {
+    width: 300px;
+    text-align: center;
+    color: var(--cor5);
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-top: 1px solid var(--cor5);
+    border-bottom: 1px solid var(--cor5);
+    margin-bottom: 50px;
+    padding: 5px 0;
+}
+
+/* Slideshow */
+.slideshow-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.slideshow {
+    position: relative;
+    width: 50%;
+    height: 300px;
+}
+
+.text {
+    width: 40%;
+    padding: 20px;
+}
+
+.imagem {
+    position: absolute;
+    width: 500px;
+    opacity: 0;
+    border-radius: 15px;
+    animation: slideshow 12s infinite;
+}
+
+.imagem1 {
+    animation-delay: 0s;
+}
+
+.imagem2 {
+    animation-delay: 3s;
+}
+
+.imagem3 {
+    animation-delay: 6s;
+}
+
+.imagem4 {
+    animation-delay: 9s;
+}
+
+@keyframes slideshow {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    33% { opacity: 1; }
+    43% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* MEDIA QUERIES */
+/* Para tablets e telas médias */
+@media screen and (max-width: 900px) {
+    header {
+        flex-direction: column;
+    }
+
+    .overlay-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #hero-title {
+        font-size: 3rem;
+    }
+
+    #hero-legend {
+        font-size: 1.5rem;
+    }
+
+    .slideshow-container {
+        flex-direction: column;
+    }
+
+    .slideshow {
+        width: 80%;
+    }
+
+    .text {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* Para smartphones e telas pequenas */
+@media screen and (max-width: 600px) {
+    .hero-img-container {
+        display: none;
+    }
+
+    #hero {
+        padding: 100px 0;
+    }
+
+    #hero-title {
+        font-size: 2rem;
+    }
+
+    #hero-legend {
+        font-size: 1.2rem;
+    }
+
+    #hero-description {
+        width: 100%;
+    }
+
+    .slideshow {
+        width: 100%;
+    }
+
+    .text {
+        padding: 5px;
+    }
 }
