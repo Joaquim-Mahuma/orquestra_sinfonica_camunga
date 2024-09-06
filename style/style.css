@@ -39,13 +39,17 @@ body {
     margin: auto;
 }
 
-/* HEADER */
+
+/*----------  H     E   A   D   E     R  ----------*/
+
+
 header {
     display: flex;
     align-content: space-between;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 0;
+
+    padding: 10px 0px;
     max-width: 1200px;
     margin: auto;
 }
@@ -82,20 +86,24 @@ header {
     color: var(--cor5);
 }
 
-.nav-link:hover::after {
+.nav-link:hover::after { 
     width: 100%;
 }
 
-/* HERO */
+
+/*----------  H   E   R   O  ----------*/
+
+
 #hero {
     position: relative;
-    background-image: url('../img/orquestra.jpg');
+    background-image:  url('../img/orquestra.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+
     width: 100%;
-    padding: 150px 0 100px;
-    margin-bottom: 80px;
+    padding: 150px 0px 100px;
+    margin-bottom: 50px;
 }
 
 #sub-hero {
@@ -119,7 +127,8 @@ header {
     z-index: 2;
     display: flex;
     justify-content: space-between;
-    padding: 10px 0;
+
+    padding: 10px 0px;
 }
 
 #hero-title {
@@ -127,6 +136,7 @@ header {
     font-weight: bold;
     font-family: 'TT', Arial, Helvetica, sans-serif;
     letter-spacing: -2px;
+
     margin-bottom: 10px;
 }
 
@@ -139,6 +149,7 @@ header {
 
 #hero-description {
     width: 500px;
+
     margin-bottom: 30px;
 }
 
@@ -152,6 +163,7 @@ header {
     color: white;
     border-radius: 50px;
     transition: background-color 0.3s ease-out, color 0.3s ease-in-out;
+
     padding: 20px 25px;
 }
 
@@ -175,9 +187,13 @@ header {
     max-width: 400px;
     transform: rotate(-10deg) translate(-100%, -50%);
     border-radius: 10px;
+    
 }
 
-/* ATUALIZAÇÕES */
+
+/*----------  N     O   T   I   C   I   A   S       E       A   T   U   A   L   I   Z   A   Ç   Õ   E   S  ----------*/
+
+
 #atualizacoes {
     display: flex;
     flex-direction: column;
@@ -192,36 +208,49 @@ header {
     color: var(--cor5);
     font-size: 1.5rem;
     font-weight: bold;
-    border-top: 1px solid var(--cor5);
-    border-bottom: 1px solid var(--cor5);
+    border-top: 1px dashed var(--cor5);
+    border-bottom: 1px dashed var(--cor5);
+
     margin-bottom: 50px;
-    padding: 5px 0;
+    padding: 5px 0px;
 }
 
-/* Slideshow */
 .slideshow-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+    display: flex; /* Alinha itens lado a lado */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    justify-content: space-around; /* Espaça o slide e o texto */
     flex-wrap: wrap;
     width: 100%;
-    margin-bottom: 50px;
+
+    margin-bottom: 80px;
 }
 
 .slideshow {
     position: relative;
-    width: 50%;
-    height: 300px;
+    width: 40%; /* Define o espaço ocupado pelo slide */
+    height: 270px;
 }
 
 .text {
-    width: 40%;
+    width: 40%; /* Define o espaço para o texto */
     padding: 20px;
+}
+
+.text a {
+    font-size: 2rem;
+    font-family: 'TT', Arial, Helvetica, sans-serif;
+    color: var(--cor5);
+}
+
+.date {
+    color: var(--cor3);
+
+    margin-bottom: 15px;
 }
 
 .imagem {
     position: absolute;
-    width: 500px;
+    width: 450px;
     opacity: 0;
     border-radius: 15px;
     animation: slideshow 12s infinite;
@@ -249,69 +278,4 @@ header {
     33% { opacity: 1; }
     43% { opacity: 0; }
     100% { opacity: 0; }
-}
-
-/* MEDIA QUERIES */
-/* Para tablets e telas médias */
-@media screen and (max-width: 900px) {
-    header {
-        flex-direction: column;
-    }
-
-    .overlay-content {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    #hero-title {
-        font-size: 3rem;
-    }
-
-    #hero-legend {
-        font-size: 1.5rem;
-    }
-
-    .slideshow-container {
-        flex-direction: column;
-    }
-
-    .slideshow {
-        width: 80%;
-    }
-
-    .text {
-        width: 100%;
-        padding: 10px;
-    }
-}
-
-/* Para smartphones e telas pequenas */
-@media screen and (max-width: 600px) {
-    .hero-img-container {
-        display: none;
-    }
-
-    #hero {
-        padding: 100px 0;
-    }
-
-    #hero-title {
-        font-size: 2rem;
-    }
-
-    #hero-legend {
-        font-size: 1.2rem;
-    }
-
-    #hero-description {
-        width: 100%;
-    }
-
-    .slideshow {
-        width: 100%;
-    }
-
-    .text {
-        padding: 5px;
-    }
 }
